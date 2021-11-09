@@ -1,0 +1,131 @@
+//CARROS
+###
+get http://localhost:8080/api/carro
+
+###
+post  http://localhost:8080/api/carro
+Content-Type: application/json
+
+{
+    "marca":"6189a2567da06a221f1512e7",
+    "categoria":"6189a27d7da06a221f1512e9",
+    "linea":"yaris",
+    "caja":"automatico",
+    "motor": "1500",
+    "modelo":2008
+    
+}
+
+// Marcas
+###
+get http://localhost:8080/api/marca
+
+###
+post http://localhost:8080/api/marca
+Content-Type: application/json
+
+{
+    "nombre": "KIA motors",
+    "descripcion": "fabricante surcoreano de automóviles"
+}
+
+###
+delete http://localhost:8080/api/marca/6188ab4eb24ffe7946902cbb
+
+//Categorias
+###
+get http://localhost:8080/api/categoria
+
+###
+post http://localhost:8080/api/categoria
+Content-Type: application/json
+
+{
+    "nombre": "sedan",
+    "descripcion": "Se caracterizan por tener un chasis monocasco con tres espacios claramente separados"
+}
+
+###
+delete http://localhost:8080/api/categoria/6188ae54235bc4e7c0afe1f7
+
+//Clientes
+###
+get http://localhost:8080/api/cliente
+
+###
+post http://localhost:8080/api/cliente
+Content-Type: application/json
+
+{
+    "nombre": "cristy",
+    "direccions":"4-23 zona 3",
+    "nit": 123456,
+    "telefono":"2354345"
+}
+
+###
+delete http://localhost:8080/api/cliente
+
+//tarea
+###
+get http://localhost:8080/api/tarea
+
+###
+post http://localhost:8080/api/tarea
+Content-Type: application/json
+
+{
+    "nombre": "Cambio Filtro de Aceite",
+    "descripcion":"se cambia el filtro de aceite",
+    "costo": 50,
+    "tiempoEM": 5
+}
+
+###
+delete http://localhost:8080/api/tarea
+
+//servicio
+###
+get http://localhost:8080/api/servicio
+
+###
+post http://localhost:8080/api/servicio
+Content-Type: application/json
+
+{
+    "car": "6188afcd42dd13520f63a466",
+    "cliente":"6188b5155c6a05c96851e944",
+    "descripcion":"balanceo de llantas",
+    "tareas": [
+        {
+            "comentario":"llanta delantera derecha",
+            "tarea":"61896da0c7acfcaf0f381218"
+        }
+    ],
+    "plazo": 60,
+    "costo": 80
+}
+
+###
+delete http://localhost:8080/api/tarea
+
+//Usuarios
+###
+post http://localhost:8080/api/user/signup
+Content-Type: application/json
+
+{
+    "userName": "luis",
+	"password": "1234",
+	"state": 1,
+    "rol":["manager"]
+}
+
+###
+post http://localhost:8080/api/user/signin
+Content-Type: application/json
+
+{
+    "userName": "admin",
+	"password": "1234"
+}
