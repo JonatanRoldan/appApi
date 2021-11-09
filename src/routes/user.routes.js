@@ -9,7 +9,6 @@ router.post("/signin", userCtrl.Signin);
 
 //router.get("/", verifyToken, userCtrl.getUsers);
 router.get("/", userCtrl.getUsers);
-
 router.get("/:id", userCtrl.getUser);
 router.put("/:id", userCtrl.editUser);
 router.delete("/:id", userCtrl.deleteUser);
