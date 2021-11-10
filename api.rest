@@ -110,15 +110,18 @@ Content-Type: application/json
 delete http://localhost:8080/api/tarea
 
 //Usuarios
+
+###
+get http://localhost:8080/api/user
+
 ###
 post http://localhost:8080/api/user/signup
 Content-Type: application/json
 
 {
-    "userName": "luis",
+    "userName": "jony",
 	"password": "1234",
-	"state": 1,
-    "rol":["manager"]
+    "rol":"618c1ed29f8b912d4942e656"
 }
 
 ###
@@ -126,6 +129,22 @@ post http://localhost:8080/api/user/signin
 Content-Type: application/json
 
 {
-    "userName": "admin",
+    "userName": "jony",
 	"password": "1234"
 }
+
+//Rol
+###
+get http://localhost:8080/api/rol
+
+
+###
+post http://localhost:8080/api/rol
+Content-Type: application/json
+
+{
+    "name": "mecanico"
+}
+
+###
+delete http://localhost:8080/api/rol
